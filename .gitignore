@@ -1,0 +1,50 @@
+# =========================
+# .NET / C# .gitignore
+# =========================
+
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.Production.json
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+
+# NuGet packages
+packages/
+*.nupkg
+*.snupkg
+
+# Publish output
+publish/
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
