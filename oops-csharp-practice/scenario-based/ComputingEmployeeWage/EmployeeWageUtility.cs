@@ -7,6 +7,8 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
     public class EmployeeWageUtility : IEmployeeWages
     {
         protected Random random = new Random();
+        public const int WagePerHour = 20;
+        public const int FullDayHours = 8;
 
         public void CheckAttendance()
         {
@@ -16,6 +18,12 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
                 Console.WriteLine("Employee is Present");
             else
                 Console.WriteLine("Employee is Absent");
+
+        }
+        public void CalculateDailyWage()
+        {
+            int dailyWage = WagePerHour * FullDayHours;
+            Console.WriteLine("Daily Wage: " + dailyWage);
         }
     }
 }

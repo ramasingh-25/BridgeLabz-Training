@@ -7,5 +7,6 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
     public interface IEmployeeWages
     {
         void CheckAttendance();
+        void CalculateDailyWage();
     }
 }
