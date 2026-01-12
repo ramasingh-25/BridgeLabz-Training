@@ -9,7 +9,7 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
         protected Random random = new Random();
         public const int WagePerHour = 20;
         public const int FullDayHours = 8;
-
+        public const int PartTimeHours = 4;
         public void CheckAttendance()
         {
             int attendance = random.Next(0, 2);
@@ -24,6 +24,11 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
         {
             int dailyWage = WagePerHour * FullDayHours;
             Console.WriteLine("Daily Wage: " + dailyWage);
+        }
+        public void CalculatePartTimeWage()
+        {
+            int wage = PartTimeHours * WagePerHour;
+            Console.WriteLine("Part Time Wage: " + wage);
         }
     }
 }

@@ -8,5 +8,6 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
     {
         void CheckAttendance();
         void CalculateDailyWage();
+        void CalculatePartTimeWage();
     }
 }
