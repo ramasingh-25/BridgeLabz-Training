@@ -30,5 +30,25 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
             int wage = PartTimeHours * WagePerHour;
             Console.WriteLine("Part Time Wage: " + wage);
         }
+        public void CalculateWageUsingSwitch()
+        {
+            int empType = random.Next(0, 3);
+            int hours = 0;
+
+            switch (empType)
+            {
+                case 1:
+                    hours = FullDayHours;
+                    break;
+                case 2:
+                    hours = PartTimeHours;
+                    break;
+                default:
+                    hours = 0;
+                    break;
+            }
+
+            Console.WriteLine("Wage: " + (hours * WagePerHour));
+        }
     }
 }
