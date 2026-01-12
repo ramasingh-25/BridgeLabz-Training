@@ -50,5 +50,17 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
 
             Console.WriteLine("Wage: " + (hours * WagePerHour));
         }
+        public void CalculateMonthlyWage()
+        {
+            int totalWage = 0;
+            int workingDays = 20;
+
+            for (int day = 1; day <= workingDays; day++)
+            {
+                totalWage += FullDayHours * WagePerHour;
+            }
+
+            Console.WriteLine("Monthly Wage: " + totalWage);
+        }
     }
 }
