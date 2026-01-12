@@ -11,5 +11,6 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
         void CalculatePartTimeWage();
         void CalculateWageUsingSwitch();
         void CalculateMonthlyWage();
+        void CalculateWageWithCondition();
     }
 }

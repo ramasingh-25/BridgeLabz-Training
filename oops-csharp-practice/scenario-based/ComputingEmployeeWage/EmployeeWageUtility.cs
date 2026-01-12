@@ -62,5 +62,29 @@ namespace Oops.Scenario_Based.ComputingEmployeeWage
 
             Console.WriteLine("Monthly Wage: " + totalWage);
         }
+        public void CalculateWageWithCondition()
+        {
+            int totalHours = 0;
+            int totalDays = 0;
+            int totalWage = 0;
+
+            while (totalDays < 20 && totalHours < 100)
+            {
+                totalDays++;
+                int empType = random.Next(0, 3);
+                int hours = 0;
+
+                switch (empType)
+                {
+                    case 1: hours = FullDayHours; break;
+                    case 2: hours = PartTimeHours; break;
+                }
+
+                totalHours += hours;
+                totalWage += hours * WagePerHour;
+            }
+
+            Console.WriteLine("Total Wage: " + totalWage);
+        }
     }
 }
