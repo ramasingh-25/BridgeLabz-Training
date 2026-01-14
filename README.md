@@ -109,6 +109,128 @@ This repository contains my **Core C# practice and learning work** completed dur
 
 ---
 
+---
+
+<h1 align="center"> DAY 5 – ACCESS MODIFIERS & PRACTICE 🔐 </h1>
+<p align="center"><b>📅 Date:</b> 20/12/2025 (Saturday)</p>
+
+**Topics Covered**
+- Learned about Access Modifiers  
+- Solved one question using 6 types of access modifiers  
+- Solved 2 LeetCode questions  
+
+---
+
+<h1 align="center"> DAY 6 – CONTROL FLOWS IN C# 🔁 </h1>
+<p align="center"><b>📅 Date:</b> 22/12/2025 (Monday)</p>
+
+**Topics Covered**
+- Learned C# control flow statements (if, else, else-if, while, for, switch)  
+- Solved assignments based on control flow  
+- Installed and learned Visual Studio  
+- Solved 2 LeetCode questions  
+
+---
+
+<h1 align="center"> DAY 7 – ARRAYS IN C# 📊 </h1>
+<p align="center"><b>📅 Date:</b> 23/12/2025 (Tuesday)</p>
+
+**Topics Covered**
+- Learned C# arrays (what is array, how it works, input handling)  
+- Solved assignment based on arrays  
+- Solved Visual Studio assignment  
+- Solved 1 LeetCode question  
+
+---
+
+<h1 align="center"> DAY 8 – METHODS IN C# 🧩 </h1>
+<p align="center"><b>📅 Date:</b> 24/12/2025 (Wednesday)</p>
+
+**Topics Covered**
+- Submitted array assignment (Level 1 & Level 2)  
+- Learned C# methods (how to create and call methods)  
+- Solved assignment based on methods  
+
+---
+
+<h1 align="center"> DAY 9 – STRINGS IN C# 🧵 </h1>
+<p align="center"><b>📅 Date:</b> 26/12/2025 (Friday)</p>
+
+**Topics Covered**
+- Learned C# strings, string creation & escape sequences  
+- Learned string class built-in methods  
+- Solved assignment based on strings  
+- Solved 1 LeetCode question  
+- Solved scenario-based problem (Snake and Ladder)  
+
+---
+
+<h1 align="center"> DAY 10 – INTRODUCTION TO OOPS 🧱 </h1>
+<p align="center"><b>📅 Date:</b> 29/12/2025 (Monday)</p>
+
+**Topics Covered**
+- Learned basics of OOPS  
+- Learned classes and objects  
+- Solved assignment based on class & object  
+- Solved scenario-based questions (Sentence Formatter, Temperature Analyzer)  
+- Solved 1 LeetCode question  
+
+---
+
+<h1 align="center"> DAY 11 – OOPS DEEP DIVE & CONSTRUCTORS 🏗️ </h1>
+<p align="center"><b>📅 Date:</b> 30/12/2025 (Tuesday)</p>
+
+**Topics Covered**
+- Learned constructors in C#  
+- Learned instance variables vs class variables & access modifiers  
+- Solved assignment based on learning  
+- Solved scenario-based problems (Library Management System, Student Quiz Grader)  
+
+---
+
+<h1 align="center"> DAY 12 – C# KEYWORDS 🗝️ </h1>
+<p align="center"><b>📅 Date:</b> 31/12/2025 (Wednesday)</p>
+
+**Topics Covered**
+- Learned keywords: sealed, static, this, is operator  
+- Solved 1 assignment based on keywords  
+- Solved 2 scenario-based problems (Bank Account Manager, Invoice Generator for Freelancers)  
+
+---
+
+<h1 align="center"> DAY 13 – OBJECT MODELING & UML 📐 </h1>
+<p align="center"><b>📅 Date:</b> 01/01/2026 (Thursday)</p>
+
+**Topics Covered**
+- Learned object-oriented design principles  
+- Learned object modeling, class diagram & sequence diagram  
+- Solved assignment based on learning  
+- Solved scenario-based problem (Cafeteria Menu App)  
+
+---
+
+<h1 align="center"> DAY 14 – INHERITANCE IN OOPS 🧬 </h1>
+<p align="center"><b>📅 Date:</b> 02/01/2026 (Friday)</p>
+
+**Topics Covered**
+- Gave review to mentor (learning from past 10 days)  
+- Learned inheritance and key features  
+- Learned types of inheritance  
+- Solved assignment based on inheritance  
+
+---
+
+<h1 align="center"> DAY 15 – WEEKLY REVISION & SUBMISSION 🔄 </h1>
+<p align="center"><b>📅 Date:</b> 03/01/2026 (Saturday)</p>
+
+**Topics Covered**
+- Revised everything learned during the week  
+- Solved scenario-based problems (Bus Route Distance Tracker, Festival Lucky Draw)  
+- Submitted all assignments  
+
+---
+
+
 
 ## 👤 AUTHOR
 
