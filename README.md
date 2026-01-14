@@ -230,7 +230,113 @@ This repository contains my **Core C# practice and learning work** completed dur
 
 ---
 
+---
 
+<h1 align="center"> DAY 16 – OOPS 🏥🚗 </h1>
+<p align="center"><b>📅 Date:</b> 05/01/2026 (Monday)</p>
+
+**Topics Covered**
+- Designed **Hospital Patient Management System**
+  - Classes: Patient, Doctor, Bill  
+  - OOPS Concepts:
+    - Encapsulation (Properties)
+    - Abstraction (IPayable Interface)
+    - Inheritance (InPatient, OutPatient)
+    - Polymorphism (DisplayInfo method)
+- Designed **Vehicle Rental Application**
+  - Classes: Vehicle, Bike, Car, Truck, Customer
+  - Access Modifiers: protected fields
+  - Interface: IRentable (CalculateRent)
+- Submitted assignment on:
+  - Encapsulation
+  - Polymorphism
+  - Interface
+  - Abstract Class  
+
+---
+
+<h1 align="center"> DAY 17 – INHERITANCE & POLYMORPHISM 🐦 </h1>
+<p align="center"><b>📅 Date:</b> 06/01/2026 (Tuesday)</p>
+
+**Topics Covered**
+- Designed **Bird Sanctuary System** scenario based problem using OOPS
+  - Base Class: Bird
+  - Interfaces:
+    - IFlyable (Fly)
+    - ISwimmable (Swim)
+  - Derived Classes:
+    - Eagle, Sparrow (IFlyable)
+    - Duck, Penguin (ISwimmable)
+    - Seagull (IFlyable & ISwimmable)
+- Used **Array concept** to store birds
+- Implemented **Polymorphism**
+  - Checked interface types using `is`
+  - Called respective methods dynamically
+
+---
+
+<h1 align="center"> DAY 18 – DATA STRUCTURES INTRODUCTION 🔗 </h1>
+<p align="center"><b>📅 Date:</b> 07/01/2026 (Wednesday)</p>
+
+**Topics Covered**
+- Introduction to **Data Structures**
+- Learned **LinkedList**
+- Solved **Employee Wage Problem** using OOPS with 6 user choices.
+- Assignment Submitted:
+  - Data Structures – LinkedList
+
+---
+
+<h1 align="center"> DAY 19 – STACK, QUEUE & cutomized Hashmap 📦 </h1>
+<p align="center"><b>📅 Date:</b> 08/01/2026 (Thursday)</p>
+
+**Topics Covered**
+- Learned:
+  - Stack
+  - Queue
+  - HashMap
+- Assignment Submitted:
+  - Stack, Queue, Customized HashMap 
+- Designed **Smart Home Automation System**
+  - Appliances: Light, Fan, AC
+  - Interface: IControllable (TurnOn, TurnOff)
+  - Polymorphism:
+    - Different ON behavior for Light vs AC
+
+---
+
+<h1 align="center"> DAY 20 – LOGIC BUILDING  🏧 </h1>
+<p align="center"><b>📅 Date:</b> 09/01/2026 (Friday)</p>
+
+**Topics Covered**
+Solved scenario based problem by using oops concept
+-learned about solid principle
+-learned about sorting algorithm
+-solved problems based on sortinng techniques
+
+
+---
+<h1 align="center"> DAY 21 – ALGORITHMS, SEARCHING  ⚙️ </h1>
+<p align="center"><b>📅 Date:</b> 12/01/2026 (Monday)</p>
+
+**Topics Covered**
+
+- Studied and practiced:
+  - Linear Search
+  - Binary Search
+  - StringBuilder 
+**Assignments & Scenarios**
+- solved scenario based question
+ 
+ 
+---
+
+
+<h1 align="center"> DAY 22 – ALGORITHMS's RUNTIME ANALYSIS ⚙️ </h1>
+<p align="center"><b>📅 Date:</b> 13/01/2026 (Tuesday)</p>
+**Topics Covered**
+-Solved Scenario based problem using OOPs and four pillars 
+-solved assignment on algorithm's runtime analysis and big o notation.
 
 ## 👤 AUTHOR
 
