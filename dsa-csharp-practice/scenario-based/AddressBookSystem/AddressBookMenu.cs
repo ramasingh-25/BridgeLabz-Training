@@ -6,7 +6,7 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
 {
     internal class AddressBookMenu
     {
-        
+
         private AddressBook manager = new AddressBook();
         private IContact addressBook;
 
@@ -23,7 +23,7 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
             {
                 Console.WriteLine("\n--- MENU ---");
                 Console.WriteLine("1. Add Contact");
-                Console.WriteLine("2. Edit Contact");
+                Console.WriteLine("2. Edit Contact by Name (UC-5)");
                 Console.WriteLine("3. Delete Contact");
                 Console.WriteLine("4. Display Contact");
                 Console.WriteLine("5. Exit");
@@ -34,19 +34,19 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
                 switch (choice)
                 {
                     case 1:
-                        manager.AddContact();
+                        addressBook.AddContact();
                         break;
 
                     case 2:
-                        manager.EditContact();
+                        addressBook.EditContactByName();
                         break;
 
                     case 3:
-                        manager.DeleteContact();
+                        addressBook.DeleteContact();
                         break;
 
                     case 4:
-                        manager.DisplayContact();
+                        addressBook.DisplayContact();
                         break;
 
                     case 5:
@@ -60,7 +60,6 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
                 }
             }
         }
+
     }
-
 }
-

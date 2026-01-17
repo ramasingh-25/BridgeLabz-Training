@@ -10,7 +10,6 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
     {
         private Contact contact = new Contact();
 
-        // UC-1 / UC-4: Add Contact
         public void AddContact()
         {
             Console.Write("Enter First Name: ");
@@ -40,8 +39,8 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
             Console.WriteLine("✅ Contact added successfully");
         }
 
-        // UC-2: Edit Contact
-        public void EditContact()
+        // 🟢 UC-5: Edit contact using name
+        public void EditContactByName()
         {
             if (string.IsNullOrEmpty(contact.FirstName))
             {
@@ -49,12 +48,22 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
                 return;
             }
 
-            Console.WriteLine("Enter new details:");
-            AddContact();
-            Console.WriteLine("✅ Contact updated successfully");
+            Console.Write("Enter First Name to edit contact: ");
+            string name = Console.ReadLine();
+
+            if (contact.FirstName.Equals(name, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Enter new details:");
+
+                AddContact(); // reuse logic
+                Console.WriteLine("✅ Contact updated successfully");
+            }
+            else
+            {
+                Console.WriteLine("❌ Name not found. Cannot edit contact.");
+            }
         }
 
-        // UC-3: Delete Contact
         public void DeleteContact()
         {
             contact = new Contact();
@@ -65,5 +74,6 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
         {
             contact.ShowContact();
         }
+
     }
 }
