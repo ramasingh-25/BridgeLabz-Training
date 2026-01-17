@@ -21,12 +21,13 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
 
             while (!exit)
             {
-                Console.WriteLine("\n--- MENU ---");
+                Console.WriteLine("--- MENU ---");
                 Console.WriteLine("1. Add Contact");
                 Console.WriteLine("2. Edit Contact by Name (UC-5)");
                 Console.WriteLine("3. Delete Contact");
-                Console.WriteLine("4. Display Contact");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("4. Search by City/State (UC-7)");
+                Console.WriteLine("5. Display Contact");
+                Console.WriteLine("6. Exit");
                 Console.Write("Enter choice: ");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -50,12 +51,16 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
                         break;
 
                     case 5:
+                        addressBook.SearchByCityOrState();
+                        break;
+
+                    case 6:
                         exit = true;
                         Console.WriteLine("Exiting...");
                         break;
 
                     default:
-                        Console.WriteLine("❌ Invalid choice");
+                        Console.WriteLine("Invalid choice");
                         break;
                 }
             }

@@ -10,7 +10,7 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
     {
         private Contact contact = new Contact();
 
-        // 🟢 UC-6: Prevent duplicate contact
+       
         public void AddContact()
         {
             Console.Write("Enter First Name: ");
@@ -46,10 +46,10 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
             Console.Write("Enter Email: ");
             contact.Email = Console.ReadLine();
 
-            Console.WriteLine("✅ Contact added successfully");
+            Console.WriteLine("Contact added successfully");
         }
 
-        // UC-5
+       
         public void EditContactByName()
         {
             if (string.IsNullOrEmpty(contact.FirstName))
@@ -66,19 +66,43 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
                 Console.WriteLine("Enter new details:");
                 DeleteContact();
                 AddContact();
-                Console.WriteLine("✅ Contact updated successfully");
+                Console.WriteLine(" Contact updated successfully");
             }
             else
             {
-                Console.WriteLine("❌ Name not found");
+                Console.WriteLine("Name not found");
             }
         }
 
-        // UC-3
+        
         public void DeleteContact()
         {
             contact = new Contact();
-            Console.WriteLine("✅ Contact deleted successfully");
+            Console.WriteLine(" Contact deleted successfully");
+        }
+
+        // UC-7: Search by City or State
+        public void SearchByCityOrState()
+        {
+            if (string.IsNullOrEmpty(contact.FirstName))
+            {
+                Console.WriteLine("No contact available to search");
+                return;
+            }
+
+            Console.Write("Enter City or State to search: ");
+            string searchValue = Console.ReadLine();
+
+            if (contact.City.Equals(searchValue, StringComparison.OrdinalIgnoreCase) ||
+                contact.State.Equals(searchValue, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("✅ Contact Found:");
+                contact.ShowContact();
+            }
+            else
+            {
+                Console.WriteLine("❌ No contact found for given City/State");
+            }
         }
 
         public void DisplayContact()
