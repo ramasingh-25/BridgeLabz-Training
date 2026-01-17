@@ -8,10 +8,10 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
     {
 
         void AddContact();
-        void EditContactByName();
-        void DeleteContact();
+        //void EditContactByName();
+        //void DeleteContact();
 
-        void SearchByCityOrState();   // UC-7
+       // void SearchByCityOrState();   
         void DisplayContact();
     }
 
