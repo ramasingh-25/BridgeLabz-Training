@@ -14,6 +14,7 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
 
             Contact contact = new Contact();
 
+            // UC-1: Create Contact
             Console.Write("Enter First Name: ");
             contact.FirstName = Console.ReadLine();
 
@@ -38,19 +39,17 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
             Console.Write("Enter Email: ");
             contact.Email = Console.ReadLine();
 
-            Console.WriteLine("\n--- Contact Details ---");
+            Console.WriteLine("\n--- Contact Created ---");
             contact.ShowContact();
-            Console.Write("\nDo you want to edit contact? (yes/no): ");
+
+            // 🟢 UC-3: Delete Contact
+            Console.Write("\nDo you want to delete contact? (yes/no): ");
             string choice = Console.ReadLine();
-
-
-            //uc2 -Edit Contact
-
 
             if (choice.Equals("yes", StringComparison.OrdinalIgnoreCase))
             {
-                contact.EditContact();
-                Console.WriteLine("\n--- Updated Contact ---");
+                contact.DeleteContact();
+                Console.WriteLine("\n--- Contact Deleted ---");
                 contact.ShowContact();
             }
         }

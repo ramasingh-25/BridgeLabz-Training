@@ -16,8 +16,29 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
 
+        // UC-3: Delete Contact
+        public void DeleteContact()
+        {
+            FirstName = "";
+            LastName = "";
+            Address = "";
+            City = "";
+            State = "";
+            Zip = "";
+            PhoneNumber = "";
+            Email = "";
+
+            Console.WriteLine("✅ Contact deleted successfully");
+        }
+
         public void ShowContact()
         {
+            if (string.IsNullOrEmpty(FirstName))
+            {
+                Console.WriteLine("No contact available");
+                return;
+            }
+
             Console.WriteLine("First Name - " + FirstName);
             Console.WriteLine("Last Name - " + LastName);
             Console.WriteLine("Address - " + Address);
@@ -27,39 +48,5 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
             Console.WriteLine("Phone Number - " + PhoneNumber);
             Console.WriteLine("Email - " + Email);
         }
-        // UC-2: Edit Contact
-        public void EditContact()
-        {
-            Console.WriteLine("\nEnter New Details");
-
-            Console.Write("First Name: ");
-            FirstName = Console.ReadLine();
-
-            Console.Write("Last Name: ");
-            LastName = Console.ReadLine();
-
-            Console.Write("Address: ");
-            Address = Console.ReadLine();
-
-            Console.Write("City: ");
-            City = Console.ReadLine();
-
-            Console.Write("State: ");
-            State = Console.ReadLine();
-
-            Console.Write("Zip: ");
-            Zip = Console.ReadLine();
-
-            Console.Write("Phone Number: ");
-            PhoneNumber = Console.ReadLine();
-
-            Console.Write("Email: ");
-            Email = Console.ReadLine();
-
-            Console.WriteLine("✅ Contact updated successfully");
-        }
-
-       
     }
-
 }
