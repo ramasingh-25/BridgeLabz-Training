@@ -26,6 +26,7 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
                 //Console.WriteLine("2. Edit Contact by Name");
                 //Console.WriteLine("3. Delete Contact");
                 //Console.WriteLine("4. Search by City/State");
+                Console.WriteLine("3. View Persons by City/State ");
                 Console.WriteLine("5. Display Contact");
                 Console.WriteLine("6. Exit");
                 Console.Write("Enter choice: ");
@@ -45,16 +46,18 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
                     //case 3:
                     //    addressBook.DeleteContact();
                     //    break;
-
                     case 4:
+                        addressBook.ViewByCityOrState();
+                        break;
+                    case 5:
                         addressBook.DisplayContact();
                         break;
 
-                    //case 5:
+                    //case 6:
                     //    addressBook.SearchByCityOrState();
                     //    break;
 
-                    case 6:
+                    case 7:
                         exit = true;
                         Console.WriteLine("Exiting...");
                         break;

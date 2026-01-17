@@ -75,8 +75,29 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
         //        Console.WriteLine("Name not found");
         //    }
         //}
+        // 🟢 UC-9: View persons by City or State
+        public void ViewByCityOrState()
+        {
+            Console.Write("Enter City or State to view persons: ");
+            string input = Console.ReadLine();
 
+            bool found = false;
 
+            for (int i = 0; i < count; i++)
+            {
+                if (contacts[i].City.Equals(input, StringComparison.OrdinalIgnoreCase) ||
+                    contacts[i].State.Equals(input, StringComparison.OrdinalIgnoreCase))
+                {
+                    contacts[i].ShowContact();
+                    found = true;
+                }
+            }
+
+            if (!found)
+            {
+                Console.WriteLine("❌ No persons found for given City/State");
+            }
+        }
         public void DeleteContact()
         {
             contact = new Contact();

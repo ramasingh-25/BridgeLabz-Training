@@ -13,6 +13,8 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
 
        // void SearchByCityOrState();   
         void DisplayContact();
+
+        void ViewByCityOrState();
     }
 
     }
