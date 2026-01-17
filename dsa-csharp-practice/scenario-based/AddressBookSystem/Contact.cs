@@ -16,21 +16,6 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
 
-        // UC-3: Delete Contact
-        public void DeleteContact()
-        {
-            FirstName = "";
-            LastName = "";
-            Address = "";
-            City = "";
-            State = "";
-            Zip = "";
-            PhoneNumber = "";
-            Email = "";
-
-            Console.WriteLine("✅ Contact deleted successfully");
-        }
-
         public void ShowContact()
         {
             if (string.IsNullOrEmpty(FirstName))

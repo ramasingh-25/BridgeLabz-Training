@@ -6,15 +6,13 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
 {
     using System;
 
-    internal class AddressBook
+    internal class AddressBook: IContact
     {
-        public static void Main(string[] args)
+        private Contact contact = new Contact();
+
+        // UC-1 / UC-4: Add Contact
+        public void AddContact()
         {
-            Console.WriteLine("Welcome to Address Book System");
-
-            Contact contact = new Contact();
-
-            // UC-1: Create Contact
             Console.Write("Enter First Name: ");
             contact.FirstName = Console.ReadLine();
 
@@ -39,19 +37,33 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
             Console.Write("Enter Email: ");
             contact.Email = Console.ReadLine();
 
-            Console.WriteLine("\n--- Contact Created ---");
-            contact.ShowContact();
+            Console.WriteLine("✅ Contact added successfully");
+        }
 
-            // 🟢 UC-3: Delete Contact
-            Console.Write("\nDo you want to delete contact? (yes/no): ");
-            string choice = Console.ReadLine();
-
-            if (choice.Equals("yes", StringComparison.OrdinalIgnoreCase))
+        // UC-2: Edit Contact
+        public void EditContact()
+        {
+            if (string.IsNullOrEmpty(contact.FirstName))
             {
-                contact.DeleteContact();
-                Console.WriteLine("\n--- Contact Deleted ---");
-                contact.ShowContact();
+                Console.WriteLine("No contact to edit");
+                return;
             }
+
+            Console.WriteLine("Enter new details:");
+            AddContact();
+            Console.WriteLine("✅ Contact updated successfully");
+        }
+
+        // UC-3: Delete Contact
+        public void DeleteContact()
+        {
+            contact = new Contact();
+            Console.WriteLine("✅ Contact deleted successfully");
+        }
+
+        public void DisplayContact()
+        {
+            contact.ShowContact();
         }
     }
 }
