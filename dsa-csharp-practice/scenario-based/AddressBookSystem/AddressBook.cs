@@ -75,7 +75,7 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
         //        Console.WriteLine("Name not found");
         //    }
         //}
-        // 🟢 UC-9: View persons by City or State
+        // UC-9: View persons by City or State
         public void ViewByCityOrState()
         {
             Console.Write("Enter City or State to view persons: ");
@@ -104,7 +104,27 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
             Console.WriteLine(" Contact deleted successfully");
         }
 
-       
+        // UC-10: Count persons by City or State
+        public void CountByCityOrState()
+        {
+            Console.Write("Enter City or State to count persons: ");
+            string input = Console.ReadLine();
+
+            int total = 0;
+
+            for (int i = 0; i < count; i++)
+            {
+                if (contacts[i].City.Equals(input, StringComparison.OrdinalIgnoreCase) ||
+                    contacts[i].State.Equals(input, StringComparison.OrdinalIgnoreCase))
+                {
+                    total++;
+                }
+            }
+
+            Console.WriteLine("Total persons in " + input + " = " + total);
+        }
+
+
         //public void SearchByCityOrState()
         //{
         //    if (string.IsNullOrEmpty(contact.FirstName))
