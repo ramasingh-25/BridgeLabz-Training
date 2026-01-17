@@ -6,11 +6,11 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
 {
     internal interface IContact
     {
-       
-            void AddContact();
-            void DeleteContact();
-            void DisplayContact();
-            void EditContactByName();
+
+        void AddContact();
+        void EditContactByName();
+        void DeleteContact();
+        void DisplayContact();
     }
 
     }

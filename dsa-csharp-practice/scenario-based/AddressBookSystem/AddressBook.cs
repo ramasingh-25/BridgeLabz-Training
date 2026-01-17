@@ -6,14 +6,24 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
 {
     using System;
 
-    internal class AddressBook: IContact
+    internal class AddressBook : IContact
     {
         private Contact contact = new Contact();
 
+        // 🟢 UC-6: Prevent duplicate contact
         public void AddContact()
         {
             Console.Write("Enter First Name: ");
-            contact.FirstName = Console.ReadLine();
+            string firstName = Console.ReadLine();
+
+            if (!string.IsNullOrEmpty(contact.FirstName) &&
+                contact.FirstName.Equals(firstName, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("❌ Duplicate contact not allowed");
+                return;
+            }
+
+            contact.FirstName = firstName;
 
             Console.Write("Enter Last Name: ");
             contact.LastName = Console.ReadLine();
@@ -39,7 +49,7 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
             Console.WriteLine("✅ Contact added successfully");
         }
 
-        // 🟢 UC-5: Edit contact using name
+        // UC-5
         public void EditContactByName()
         {
             if (string.IsNullOrEmpty(contact.FirstName))
@@ -48,22 +58,23 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
                 return;
             }
 
-            Console.Write("Enter First Name to edit contact: ");
+            Console.Write("Enter First Name to edit: ");
             string name = Console.ReadLine();
 
             if (contact.FirstName.Equals(name, StringComparison.OrdinalIgnoreCase))
             {
                 Console.WriteLine("Enter new details:");
-
-                AddContact(); // reuse logic
+                DeleteContact();
+                AddContact();
                 Console.WriteLine("✅ Contact updated successfully");
             }
             else
             {
-                Console.WriteLine("❌ Name not found. Cannot edit contact.");
+                Console.WriteLine("❌ Name not found");
             }
         }
 
+        // UC-3
         public void DeleteContact()
         {
             contact = new Contact();
@@ -74,6 +85,5 @@ namespace BridgeLabzDSA.Scenario_based.AddressBookSystem
         {
             contact.ShowContact();
         }
-
     }
 }
