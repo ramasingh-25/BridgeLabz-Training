@@ -337,6 +337,82 @@ Solved scenario based problem by using oops concept
 **Topics Covered**
 -Solved Scenario based problem using OOPs and four pillars 
 -solved assignment on algorithm's runtime analysis and big o notation.
+---
+
+<h1 align="center"> DAY 23 – DATA STRUCTURES APPLICATIONS 🔗 </h1> <p align="center"><b>📅 Date:</b> 14/01/2026 (Wednesday)</p>
+
+**Topics Covered**
+-Revised OOPs Concept
+-Address Book Scenario Based problem solved till UC11
+
+<h1 align="center"> DAY 24 – COLLECTIONS & GENERICS 📚 </h1> <p align="center"><b>📅 Date:</b> 15/01/2026 (Thursday)</p>
+
+**Topics Covered**
+
+-Scenario-Based Problems Using Doubly LInkedList and Stacke
+- Maintain memory-efficient tab management using pointers
+
+<h1 align="center"> DAY 25 – SORTING ALGORITHMS 🧮 </h1> <p align="center"><b>📅 Date:</b> 16/01/2026 (Friday)</p>
+
+**Topics Covered**
+Solved Scenario Based Problems
+-🚦 TrafficManager – Roundabout Vehicle Flow
+
+-📚 BookShelf – Library Organization
+
+🛠 Concepts Used
+
+Circular Linked List, Queue, LinkedList, HashMap, HashSet, OOPS principles, Core C#
+Scenario-Based Problems
+
+
+<h1 align="center"> DAY 26  🚦 </h1> <p align="center"><b>📅 Date:</b> 17/01/2026 (Saturday)</p>
+
+**Topics Covered**
+
+-Deep understanding of Data structure algorithm(Linkedlist,stack,queue,sorting searching)
+-solved scneario based question- ->FlashDealz – Product Sorting by Discount(concept involved-quick sort,bubble sort)
+
+<h1 align="center"> DAY 27 – ADVANCED ALGORITHMS ⚙️ </h1> <p align="center"><b>📅 Date:</b> 19/01/2026 (Monday)</p>
+
+**Topics Covered**
+
+Merge Sort
+
+Stability in sorting
+
+HashMap + Queue integration
+
+Solved Scenario-Based Problems using DSA and OOPs Concepts
+
+
+<h1 align="center"> DAY 28🔐 </h1> <p align="center"><b>📅 Date:</b> 20/01/2026 (Tuesday)</p>
+
+**Topics Covered**
+
+Radix Sort
+
+Binary Search
+
+Backtracking algorithms
+
+Time & space complexity visualization
+
+Scenario-Based Problems
+
+-🆔 Sorting Aadhar Numbers
+
+-🔓 Password Cracker Simulator
+
+
+Assignment Submitted
+
+✅ 02 Submission of Collections
+
+<h1 align="center"> DAY 29🔐 </h1> <p align="center"><b>📅 Date:</b> 21/01/2026 (Wednesday)</p>
+-basic understanding of streams
+-based on learning solved assignment of streams
+-solved scneario based question using DSA ->SmartCheckout – Supermarket Billing  Queue ->EduResults – Rank Sheet Generator
 
 ## 👤 AUTHOR
 
