@@ -76,15 +76,26 @@ CREATE TABLE AppointmentAudit (
     Action NVARCHAR(100)
 );
 
-        IF OBJECT_ID('Visits') IS NULL
-        CREATE TABLE Visits (
-            VisitId INT IDENTITY PRIMARY KEY,
-            AppointmentId INT,
-            Diagnosis NVARCHAR(200),
-            VisitDate DATETIME,
-            FOREIGN KEY (AppointmentId) REFERENCES Appointments(AppointmentId)
-        );";
-
+      IF OBJECT_ID('Visits') IS NULL
+CREATE TABLE Visits (
+    VisitId INT IDENTITY PRIMARY KEY,
+    AppointmentId INT,
+    Diagnosis NVARCHAR(200),
+    Prescription NVARCHAR(MAX), 
+    Notes NVARCHAR(MAX),       
+    VisitDate DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (AppointmentId) REFERENCES Appointments(AppointmentId)
+);
+IF OBJECT_ID('Prescriptions') IS NULL
+CREATE TABLE Prescriptions (
+    PrescriptionId INT IDENTITY PRIMARY KEY,
+    VisitId INT,
+    MedicineName NVARCHAR(100),
+    Dosage NVARCHAR(50),
+    Duration NVARCHAR(50),
+    FOREIGN KEY (VisitId) REFERENCES Visits(VisitId)
+);
+";
         new SqlCommand(query, con).ExecuteNonQuery();
         SeedSpecialties(con);
     }

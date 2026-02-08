@@ -30,6 +30,9 @@
                 Console.WriteLine("11. Cancel Appointment");
                 Console.WriteLine("12. Reschedule Appointment");
                 Console.WriteLine("13. View Daily Schedule");
+                Console.WriteLine("14. Record Patient Visit");
+                Console.WriteLine("15. View Medical History");
+                Console.WriteLine("16. Add Prescription Details");
                 Console.WriteLine("0. Exit");
                 Console.Write("Choose option: ");
 
@@ -73,6 +76,15 @@
                         break;
                     case "13":
                         ViewDailySchedule();
+                        break;
+                    case "14":
+                        RecordPatientVisit();
+                        break;
+                    case "15":
+                        ViewMedicalHistory();
+                        break;
+                    case "16":
+                        AddPrescriptionDetails();
                         break;
                     case "0":
                         return;
@@ -372,6 +384,90 @@ private void ViewDailySchedule()
         Console.WriteLine($"Error: {ex.Message}");
     }
 }
+private void RecordPatientVisit()
+{
+    try
+    {
+        Console.WriteLine("\n--- Record Patient Visit ---");
+        Console.Write("Enter Appointment ID: ");
+        int appId = int.Parse(Console.ReadLine());
 
+        Console.Write("Diagnosis: ");
+        string diagnosis = Console.ReadLine();
+
+        Console.Write("Prescription: ");
+        string prescription = Console.ReadLine();
+
+        Console.Write("Additional Notes: ");
+        string notes = Console.ReadLine();
+
+        patientService.RecordPatientVisit(appId, diagnosis, prescription, notes);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error: {ex.Message}");
+    }
+}
+private void ViewMedicalHistory()
+{
+    Console.Write("Enter Patient ID to view medical history: ");
+    int pId = int.Parse(Console.ReadLine());
+
+    var history = patientService.GetDetailedMedicalHistory(pId);
+
+    if (history.Count == 0)
+    {
+        Console.WriteLine("No medical history found for this patient.");
+        return;
+    }
+
+    Console.WriteLine($"\n--- Medical History for Patient ID: {pId} ---");
+    foreach (var v in history)
+    {
+        Console.WriteLine(new string('-', 40));
+        Console.WriteLine($"Date: {v.VisitDate:yyyy-MM-dd HH:mm}");
+        Console.WriteLine($"Doctor: {v.DoctorName}");
+        Console.WriteLine($"Diagnosis: {v.Diagnosis}");
+        Console.WriteLine($"Prescription: {v.Prescription}");
+        Console.WriteLine($"Notes: {v.Notes}");
+    }
+}
+
+private void AddPrescriptionDetails()
+{
+    try
+    {
+        Console.Write("Enter Visit ID: ");
+        int visitId = int.Parse(Console.ReadLine());
+
+        List<PrescriptionEntry> medicines = new List<PrescriptionEntry>();
+        
+        while (true)
+        {
+            Console.WriteLine("\n--- Add Medicine ---");
+            Console.Write("Medicine Name (or type 'done' to finish): ");
+            string name = Console.ReadLine();
+            if (name.ToLower() == "done") break;
+
+            Console.Write("Dosage (e.g., 500mg): ");
+            string dosage = Console.ReadLine();
+
+            Console.Write("Duration (e.g., 5 days): ");
+            string duration = Console.ReadLine();
+
+            medicines.Add(new PrescriptionEntry { 
+                MedicineName = name, 
+                Dosage = dosage, 
+                Duration = duration 
+            });
+        }
+
+        patientService.AddPrescriptionBatch(visitId, medicines);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error: {ex.Message}");
+    }
+}
 
     }
