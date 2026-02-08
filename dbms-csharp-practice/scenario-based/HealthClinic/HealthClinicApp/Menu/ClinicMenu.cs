@@ -33,6 +33,10 @@
                 Console.WriteLine("14. Record Patient Visit");
                 Console.WriteLine("15. View Medical History");
                 Console.WriteLine("16. Add Prescription Details");
+                Console.WriteLine("17. Generate Bill");
+                Console.WriteLine("18. Record Payment");
+                Console.WriteLine("19. View Outstanding Bills");
+                Console.WriteLine("20. Generate Revenue Report");
                 Console.WriteLine("0. Exit");
                 Console.Write("Choose option: ");
 
@@ -85,6 +89,18 @@
                         break;
                     case "16":
                         AddPrescriptionDetails();
+                        break;
+                    case "17":
+                        GenerateBill();
+                        break;
+                    case "18":
+                        RecordPayment();
+                        break;
+                    case "19":
+                        ViewOutstandingBills();
+                        break;
+                    case "20":
+                        GenerateRevenueReport();
                         break;
                     case "0":
                         return;
@@ -469,5 +485,74 @@ private void AddPrescriptionDetails()
         Console.WriteLine($"Error: {ex.Message}");
     }
 }
+private void GenerateBill()
+{
+    try
+    {
+        Console.WriteLine("\n--- Generate Patient Bill ---");
+        Console.Write("Enter Visit ID: ");
+        int visitId = int.Parse(Console.ReadLine());
 
+        Console.Write("Enter Additional Charges (Pharmacy/Labs): ");
+        decimal additional = decimal.Parse(Console.ReadLine());
+
+        // Calling through appointmentService as requested
+        appointmentService.GenerateBill(visitId, additional);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Billing Error: {ex.Message}");
+    }
+}
+private void RecordPayment()
+{
+    try
+    {
+        Console.WriteLine("\n--- Record Payment ---");
+        Console.Write("Enter Bill ID: ");
+        int billId = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter Payment Mode (Cash/Card/UPI): ");
+        string mode = Console.ReadLine();
+
+        appointmentService.RecordPayment(billId, mode);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Payment Error: {ex.Message}");
+    }
+}
+private void ViewOutstandingBills()
+{
+    try
+    {
+        // Calling through appointmentService
+        appointmentService.ViewOutstandingBills();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Report Error: {ex.Message}");
+    }
+}
+private void GenerateRevenueReport()
+{
+    try
+    {
+        Console.WriteLine("\n--- Administrative Revenue Report ---");
+        Console.Write("Start Date (yyyy-mm-dd): ");
+        DateTime start = DateTime.Parse(Console.ReadLine());
+
+        Console.Write("End Date (yyyy-mm-dd): ");
+        DateTime end = DateTime.Parse(Console.ReadLine());
+
+        Console.Write("Minimum Revenue Threshold (e.g., 500): ");
+        decimal threshold = decimal.Parse(Console.ReadLine());
+
+        appointmentService.GenerateRevenueReport(start, end, threshold);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Report Error: {ex.Message}");
+    }
+}
     }

@@ -95,6 +95,28 @@ CREATE TABLE Prescriptions (
     Duration NVARCHAR(50),
     FOREIGN KEY (VisitId) REFERENCES Visits(VisitId)
 );
+IF OBJECT_ID('Bills') IS NULL
+CREATE TABLE Bills (
+    BillId INT IDENTITY PRIMARY KEY,
+    VisitId INT,
+    ConsultationAmount DECIMAL(10,2),
+    AdditionalCharges DECIMAL(10,2),
+    TotalAmount AS (ConsultationAmount + AdditionalCharges), 
+    PaymentStatus NVARCHAR(20) DEFAULT 'UNPAID',
+    PaymentDate DATETIME NULL,                  
+    PaymentMode NVARCHAR(50) NULL,              
+    FOREIGN KEY (VisitId) REFERENCES Visits(VisitId)
+);
+
+IF OBJECT_ID('PaymentTransactions') IS NULL
+CREATE TABLE PaymentTransactions (
+    TransactionId INT IDENTITY PRIMARY KEY,
+    BillId INT,
+    AmountPaid DECIMAL(10,2),
+    TransactionDate DATETIME DEFAULT GETDATE(),
+    PaymentMode NVARCHAR(50),
+    FOREIGN KEY (BillId) REFERENCES Bills(BillId)
+);
 ";
         new SqlCommand(query, con).ExecuteNonQuery();
         SeedSpecialties(con);
