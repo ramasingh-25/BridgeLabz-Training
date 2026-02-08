@@ -1,0 +1,29 @@
+{
+  "Student": {
+    "AddressBookName": "Student",
+    "Contacts": [
+      {
+        "Id": 221500,
+        "FirstName": "Loveesh",
+        "LastName": "Gulati",
+        "Address": "Palwal",
+        "City": "Palwal",
+        "State": "Haryana",
+        "Zip": "121102",
+        "PhoneNumber": "9315118124",
+        "Email": "loveesh@gmail.com"
+      },
+      {
+        "Id": 221501,
+        "FirstName": "Priyanshu",
+        "LastName": "Chauhan",
+        "Address": "Bijnor",
+        "City": "Bijnor",
+        "State": "UP",
+        "Zip": "281406",
+        "PhoneNumber": "3234564234",
+        "Email": "pri@gmail.com"
+      }
+    ]
+  }
+}

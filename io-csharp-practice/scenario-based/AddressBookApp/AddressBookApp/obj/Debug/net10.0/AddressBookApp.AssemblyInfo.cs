@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AddressBookApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2dbb3a874214469eddc8c459b891f16f5e6f0629")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15f89d09d1d7b82de627a8f5f31ccd38edbfcdb4")]
 [assembly: System.Reflection.AssemblyProductAttribute("AddressBookApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AddressBookApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

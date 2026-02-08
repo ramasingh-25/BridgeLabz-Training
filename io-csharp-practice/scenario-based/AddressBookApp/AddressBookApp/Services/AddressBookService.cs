@@ -1,7 +1,8 @@
 ﻿
 using AddressBookApp.Models;
 using AddressBookApp.Exceptions;
-
+using System.IO;
+using System.Text.Json;
 namespace AddressBookApp.Services
 {
     public class AddressBookService
@@ -287,5 +288,146 @@ public void ReadFromFile()
         Console.WriteLine($"An error occurred while reading the file: {ex.Message}");
     }
 }
+private string csvPath = "AddressBook.csv";
+
+// UC 14: Write to CSV
+public void WriteToCsv()
+{
+    try
+    {
+        using (StreamWriter sw = new StreamWriter(csvPath))
+        {
+            // Header row
+            sw.WriteLine("AddressBook,Id,FirstName,LastName,Address,City,State,Zip,Phone,Email");
+
+            foreach (var book in addressBooks.Values)
+            {
+                foreach (var contact in book.Contacts)
+                {
+                    // Encapsulating fields in quotes to handle commas within data
+                    sw.WriteLine($"\"{book.AddressBookName}\",\"{contact.Id}\",\"{contact.FirstName}\",\"{contact.LastName}\",\"{contact.Address}\",\"{contact.City}\",\"{contact.State}\",\"{contact.Zip}\",\"{contact.PhoneNumber}\",\"{contact.Email}\"");
+                }
+            }
+        }
+        Console.WriteLine($"Successfully exported to {csvPath}");
+    }
+    catch (IOException ex)
+    {
+        Console.WriteLine($"Error writing CSV: {ex.Message}");
+    }
+}
+
+// UC 14: Read from CSV
+public void ReadFromCsv()
+{
+    if (!File.Exists(csvPath))
+    {
+        Console.WriteLine("CSV file not found.");
+        return;
+    }
+
+    try
+    {
+        string[] lines = File.ReadAllLines(csvPath);
+        // Skip header (i=1)
+        for (int i = 1; i < lines.Length; i++)
+        {
+            // Simple split (assumes no commas inside the actual data fields)
+            // For complex data, use a Regex or CsvHelper library
+            string[] values = lines[i].Split(new[] { "\",\"" }, StringSplitOptions.None);
+            
+            // Cleanup quotes from split results
+            for (int j = 0; j < values.Length; j++) 
+                values[j] = values[j].Trim('\"');
+
+            if (values.Length == 10)
+            {
+                string bookName = values[0];
+                if (!addressBooks.ContainsKey(bookName)) 
+                    CreateAddressBook(bookName);
+
+                int id = int.Parse(values[1]);
+                var book = addressBooks[bookName];
+
+                if (!book.Contacts.Any(c => c.Id == id))
+                {
+                    var contact = new Contact<int>(id, values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[9]);
+                    book.Contacts.Add(contact);
+                }
+            }
+        }
+        Console.WriteLine("CSV data imported successfully.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error reading CSV: {ex.Message}");
+    }
+}
+private string jsonPath = "AddressBook.json";
+
+// UC 15: Write to JSON
+public void WriteToJson()
+{
+    try
+    {
+        // JsonSerializerOptions makes the file "pretty" and readable for humans
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        string jsonString = JsonSerializer.Serialize(addressBooks, options);
+        
+        File.WriteAllText(jsonPath, jsonString);
+        Console.WriteLine($"Successfully exported data to {jsonPath}");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error writing JSON: {ex.Message}");
+    }
+}
+
+// UC 15: Read from JSON
+public void ReadFromJson()
+{
+    if (!File.Exists(jsonPath))
+    {
+        Console.WriteLine("JSON file not found.");
+        return;
+    }
+
+    try
+    {
+        string jsonString = File.ReadAllText(jsonPath);
+        
+        // Deserialize back into the dictionary structure
+        var importedData = JsonSerializer.Deserialize<Dictionary<string, AddressBookModel<int>>>(jsonString);
+
+        if (importedData != null)
+        {
+            foreach (var item in importedData)
+            {
+                // Logic to merge or overwrite
+                if (!addressBooks.ContainsKey(item.Key))
+                {
+                    addressBooks[item.Key] = item.Value;
+                }
+                else
+                {
+                    // Merge contacts if the book already exists in memory
+                    foreach (var contact in item.Value.Contacts)
+                    {
+                        if (!addressBooks[item.Key].Contacts.Any(c => c.Id == contact.Id))
+                        {
+                            addressBooks[item.Key].Contacts.Add(contact);
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("JSON data imported and merged successfully.");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error reading JSON: {ex.Message}");
+    }
+}
+
     }
 }
