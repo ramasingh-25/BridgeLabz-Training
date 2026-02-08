@@ -2,25 +2,33 @@
  public class PatientUtility : IPatientService
     {
         public void RegisterPatient(Patient patient)
-        {
-            using SqlConnection con = ConnectionDB.GetConnection();
+{
+    using SqlConnection con = ConnectionDB.GetConnection();
 
-            string query = @"INSERT INTO Patients
-                            (Name, DateOfBirth, ContactNumber, Email, Address, BloodGroup)
-                            VALUES
-                            (@Name, @DateOfBirth, @ContactNumber, @Email, @Address, @BloodGroup)";
+    string query = @"INSERT INTO Patients
+                    (Name, DateOfBirth, ContactNumber, Email, Address, BloodGroup)
+                    VALUES
+                    (@Name, @DateOfBirth, @ContactNumber, @Email, @Address, @BloodGroup)";
 
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@Name", patient.Name);
-            cmd.Parameters.AddWithValue("@DateOfBirth", patient.DateOfBirth);
-            cmd.Parameters.AddWithValue("@ContactNumber", patient.ContactNumber);
-            cmd.Parameters.AddWithValue("@Email", patient.Email);
-            cmd.Parameters.AddWithValue("@Address", patient.Address);
-            cmd.Parameters.AddWithValue("@BloodGroup", patient.BloodGroup);
+    SqlCommand cmd = new SqlCommand(query, con);
+    cmd.Parameters.AddWithValue("@Name", patient.Name);
+    cmd.Parameters.AddWithValue("@DateOfBirth", patient.DateOfBirth);
+    cmd.Parameters.AddWithValue("@ContactNumber", patient.ContactNumber);
+    cmd.Parameters.AddWithValue("@Email", patient.Email);
+    cmd.Parameters.AddWithValue("@Address", patient.Address);
+    cmd.Parameters.AddWithValue("@BloodGroup", patient.BloodGroup);
 
-            con.Open();
-            cmd.ExecuteNonQuery();
-        }
+    try
+    {
+        con.Open();
+        cmd.ExecuteNonQuery();
+    }
+    catch (SqlException ex) when (ex.Number == 2627 || ex.Number == 2601)
+    {
+        // Throw your custom exception when a duplicate phone number is found
+        throw new PatientAlreadyExistsException($"A patient with contact number '{patient.ContactNumber}' is already registered.");
+    }
+}
 
         public void UpdatePatient(int patientId, Patient patient)
         {
@@ -51,7 +59,6 @@
                 throw new PatientNotFoundException("Patient not found.");
         }
 
-        // ✅ UC-1.3 SEARCH
         public List<Patient> SearchPatients(int? id, string contactnumber, string name)
         {
             List<Patient> patients = new();
