@@ -26,7 +26,6 @@ public static class ConnectionDB
         using SqlConnection con = new SqlConnection(appConn);
         con.Open();
 
-        // Updated Patients table to match Patient.cs properties
         string query = @"
         IF OBJECT_ID('Patients') IS NULL
         CREATE TABLE Patients (
@@ -46,24 +45,36 @@ public static class ConnectionDB
         );
 
        IF OBJECT_ID('Doctors') IS NULL
-        CREATE TABLE Doctors (
-    DoctorId INT IDENTITY PRIMARY KEY,
-    DoctorName NVARCHAR(100),
-    SpecialtyId INT,
-    ContactNumber NVARCHAR(15),
-    ConsultationFee DECIMAL(10,2),
-    IsActive BIT DEFAULT 1,
-    FOREIGN KEY (SpecialtyId) REFERENCES Specialties(SpecialtyId)
-        );
+    CREATE TABLE Doctors (
+        DoctorId INT IDENTITY PRIMARY KEY,
+        DoctorName NVARCHAR(100),
+        SpecialtyId INT,
+        ContactNumber NVARCHAR(15),
+        ConsultationFee DECIMAL(10,2),
+        IsActive BIT DEFAULT 1,
+        FOREIGN KEY (SpecialtyId) REFERENCES Specialties(SpecialtyId)
+    );
 
-        IF OBJECT_ID('Appointments') IS NULL
-        CREATE TABLE Appointments (
-            AppointmentId INT IDENTITY PRIMARY KEY,
-            PatientId INT,
-            DoctorName NVARCHAR(100),
-            AppointmentDate DATETIME,
-            FOREIGN KEY (PatientId) REFERENCES Patients(PatientId)
-        );
+    IF OBJECT_ID('Appointments') IS NULL
+    CREATE TABLE Appointments (
+        AppointmentId INT IDENTITY PRIMARY KEY,
+        PatientId INT,
+        DoctorId INT, 
+        AppointmentDate DATETIME,
+        Status NVARCHAR(20) DEFAULT 'SCHEDULED', 
+        FOREIGN KEY (PatientId) REFERENCES Patients(PatientId),
+        FOREIGN KEY (DoctorId) REFERENCES Doctors(DoctorId) 
+        
+    );
+    IF OBJECT_ID('AppointmentAudit') IS NULL
+CREATE TABLE AppointmentAudit (
+    AuditId INT IDENTITY PRIMARY KEY,
+    AppointmentId INT,
+    OldStatus NVARCHAR(20),
+    NewStatus NVARCHAR(20),
+    ChangedDate DATETIME DEFAULT GETDATE(),
+    Action NVARCHAR(100)
+);
 
         IF OBJECT_ID('Visits') IS NULL
         CREATE TABLE Visits (
