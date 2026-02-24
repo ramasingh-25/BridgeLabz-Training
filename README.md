@@ -331,7 +331,6 @@ Solved scenario based problem by using oops concept
  
 ---
 
-
 <h1 align="center"> DAY 22 – ALGORITHMS's RUNTIME ANALYSIS ⚙️ </h1>
 <p align="center"><b>📅 Date:</b> 13/01/2026 (Tuesday)</p>
 **Topics Covered**
@@ -414,6 +413,344 @@ Assignment Submitted
 -based on learning solved assignment of streams
 -solved scneario based question using DSA ->SmartCheckout – Supermarket Billing  Queue ->EduResults – Rank Sheet Generator
 
+
+<h1 align="center"> DAY 30 – EXCEPTION HANDLING ⚠️ </h1> <p align="center"><b>📅 Date:</b> 22/01/2026 (Thursday)</p>
+
+Topics Covered
+
+Understanding what is an Exception
+
+Learned Exception Handling using try, catch, finally, and throw
+
+Solved assignment based on Exception Handling
+
+Learned difference between Generic and Non-Generic Collections
+
+Solved scenario-based problem using DSA:
+
+🚑 AmbulanceRoute – Emergency Patient Navigation
+
+Attended meeting with Capgemini mentor
+
+<h1 align="center"> DAY 31 – REGEX 🧩 </h1> <p align="center"><b>📅 Date:</b> 23/01/2026 (Friday)</p>
+
+Topics Covered
+
+Understanding Regular Expressions (Regex)
+
+Learned patterns, character classes, and quantifiers
+
+Solved assignment based on Regex
+
+<h1 align="center"> DAY 32 – MSTEST & NUNIT TESTING 🧪 </h1> <p align="center"><b>📅 Date:</b> 24/01/2026 (Saturday)</p>
+
+Topics Covered
+
+Understanding MSTest Framework
+
+Comparison between MSTest and NUnit
+
+Writing test classes and test methods
+
+Exception testing in Unit Testing
+
+Regex testing using both frameworks
+
+<h1 align="center"> DAY 33 – ANNOTATION & REFLECTION 🔍 </h1> <p align="center"><b>📅 Date:</b> 26/01/2026 (Monday)</p>
+
+Topics Covered
+
+Understanding Annotations (Attributes) and Reflection
+
+Built-in annotations, custom annotations, and real-use cases
+
+Reflection classes: Type, FieldInfo, MethodInfo, etc.
+
+Solved assignments based on Annotation and Reflection
+
+<h1 align="center"> DAY 34 – SONARQUBE & CODE QUALITY 🛠️ </h1> <p align="center"><b>📅 Date:</b> 27/01/2026 (Tuesday)</p>
+
+Topics Covered
+
+SonarQube setup & analysis concepts
+
+Learned Code Smells & Quality Rules
+
+Tried implementing SonarQube (Partially Completed)
+
+Refactored Address Book Application using Collections & Generics
+
+Solved 2 scenario-based questions
+
+<h1 align="center"> DAY 35 – CSV HANDLING & EXCEPTION-CENTRIC SYSTEMS 📄 </h1> <p align="center"><b>📅 Date:</b> 28/01/2026 (Wednesday)</p>
+
+Topics Covered
+
+CSV file reading & writing
+
+CSV parsing techniques
+
+Exception handling in file operations
+
+Solved assignment on CSV data handling
+
+Solved 2 scenario-based problems:
+
+✈️ AeroVigil
+
+🏦 Bank Account
+
+<h1 align="center"> DAY 36 – JSON & ADVANCED REGEX 📂 </h1> <p align="center"><b>📅 Date:</b> 29/01/2026 (Thursday)</p>
+
+Topics Covered
+
+JSON concepts
+
+Reading, writing & parsing JSON files
+
+Implemented JSON read/write utilities
+
+Regex revision & advanced patterns
+
+Solved scenario-based problem:
+
+🐦 LexicalTwit
+
+Attended meeting with Capgemini mentor
+
+<h1 align="center"> DAY 37 – JSON PRACTICE & REVISION 🔁 </h1> <p align="center"><b>📅 Date:</b> 30/01/2026 (Friday)</p>
+
+Topics Covered
+
+JSON practice & concept revision
+
+Solved assignment based on JSON
+
+Revision of Collections, Exceptions, and Regex
+
+Solved scenario-based problem:
+
+🚚 Future Logistics
+
+<h1 align="center"> DAY 38 – ADDRESS BOOK FEATURE COMPLETION 📘 </h1> <p align="center"><b>📅 Date:</b> 31/01/2026 (Saturday)</p>
+
+Topics Covered
+
+Address Book – Feature Completion
+
+Applied all learned concepts
+
+Implemented additional Use Cases (UCs) integrating:
+
+Collections
+
+Generics
+
+Exception Handling
+File Operations
+<h1 align="center"> DAY 39 – DESIGN PRINCIPLES & MULTITHREADING 🧠 </h1> <p align="center"><b>📅 Date:</b> 02/02/2026 (Monday)</p>
+
+Topics Covered
+
+Learned Software Design Principles:
+
+KISS (Keep It Simple, Stupid)
+
+DRY (Don’t Repeat Yourself)
+
+DIY (Do It Yourself)
+
+Introduction to Multithreading
+
+<h1 align="center"> DAY 40 – MULTITHREADING DEEP DIVE ⚙️ </h1> <p align="center"><b>📅 Date:</b> 03/02/2026 (Tuesday)</p>
+
+Topics Covered
+
+Deep understanding of Multithreading
+
+Applied learned concepts
+
+Implemented additional Use Cases (UCs) in Address Book
+
+<h1 align="center"> DAY 41 – DBMS FUNDAMENTALS 🗄️ </h1> <p align="center"><b>📅 Date:</b> 04/02/2026 (Wednesday)</p>
+
+Topics Covered
+
+Solved assignment based on Multithreading
+
+Started learning DBMS
+
+Learned about RDBMS
+
+Studied DDL, DCL, and DML in SQL Server
+
+<h1 align="center"> DAY 42 – MSSQL DEEP UNDERSTANDING 💾 </h1> <p align="center"><b>📅 Date:</b> 05/02/2026 (Thursday)</p>
+
+Topics Covered
+
+Learned core MSSQL programming concepts
+
+Studied SQL Joins, Subqueries, Aggregate Functions, and Data Grouping
+
+Started new project: 🏥 Healthcare
+
+Attended meeting with Capgemini mentor
+
+<h1 align="center"> DAY 43 – HEALTHCARE PROJECT IMPLEMENTATION 🏥 </h1> <p align="center"><b>📅 Date:</b> 06/02/2026 (Friday)</p>
+
+Topics Covered
+
+Implemented additional UCs in Healthcare project
+
+Solved assignments based on DBMS & MSSQL
+
+Attended Soft Skill classes
+
+<h1 align="center"> DAY 44 – PROJECT COMPLETION ✅ </h1> <p align="center"><b>📅 Date:</b> 07/02/2026 (Saturday)</p>
+
+Topics Covered
+
+Completed all UCs in Address Book
+
+Completed all UCs in Healthcare project
+
+<h1 align="center"> DAY 45 – REVISION & MOCK PREPARATION 📚 </h1> <p align="center"><b>📅 Date:</b> 09/02/2026 (Monday)</p>
+
+Topics Covered
+
+Revised all topics for upcoming Mock Exam
+
+Completed all pending work
+
+<h1 align="center"> DAY 46 – MOCK EXAM (1) 📝 </h1> <p align="center"><b>📅 Date:</b> 10/02/2026 (Tuesday)</p>
+
+Topics Covered
+
+Attempted Mock Exam – 1
+
+Solved 3 questions
+
+<h1 align="center"> DAY 47 – DBMS PRACTICE & SCENARIO PROBLEMS 📊 </h1> <p align="center"><b>📅 Date:</b> 11/02/2026 (Wednesday)</p>
+
+Topics Covered
+
+Solved DBMS assignment
+
+Solved scenario-based question
+
+<h1 align="center"> DAY 48 – CONCURRENT SYSTEM DESIGN 🔔 </h1> <p align="center"><b>📅 Date:</b> 12/02/2026 (Thursday)</p>
+
+Topics Covered
+
+Solved scenario-based problem:
+
+🔔 NotifyHub – Concurrent Notification Processing System
+
+Concepts: Multithreading, Async Programming, Collections, OOP (Basic & Advanced), Annotations
+
+Attended meeting with Capgemini mentor
+
+Solved 1 question assigned during meeting
+
+<h1 align="center"> DAY 49 – EMAIL VALIDATOR SYSTEM 📧 </h1> <p align="center"><b>📅 Date:</b> 13/02/2026 (Friday)</p>
+
+Topics Covered
+
+Solved scenario-based problem:
+
+🎓 Email Validator – College Admission Portal
+
+Concepts: Multithreading, I/O File Handling, Annotations, Regex
+
+Attended Soft Skill classes
+
+<h1 align="center"> DAY 50 – REVISION & PRACTICE 🔁 </h1> <p align="center"><b>📅 Date:</b> 14/02/2026 (Saturday)</p>
+
+Topics Covered
+
+Solved scenario-based problems involving:
+
+Collections
+
+Generics
+
+I/O Streams
+
+Regex
+
+Revised all topics
+
+Completed pending work
+
+<h1 align="center"> DAY 51 – ADO.NET INTRODUCTION 🔌 </h1> <p align="center"><b>📅 Date:</b> 16/02/2026 (Monday)</p>
+
+Topics Covered
+
+Started learning ADO.NET
+
+Learned basics of ADO.NET
+
+Revised MS SQL Server / DBMS
+
+Deep dive into Collections (CLR Level)
+
+Revised Multithreading, File Handling, Annotations & Reflection, NUnit / MSTest
+
+<h1 align="center"> DAY 52 – ADO.NET & ASP.NET CORE 🚀 </h1> <p align="center"><b>📅 Date:</b> 17/02/2026 (Tuesday)</p>
+
+Topics Covered
+
+Deep understanding of ADO.NET
+
+Learned ASP.NET Core basics
+
+Introduction to new project: 📏 Quantity Measurement App
+
+<h1 align="center"> DAY 53 – MOCK EXAM (2) 📝 </h1> <p align="center"><b>📅 Date:</b> 18/02/2026 (Wednesday)</p>
+
+Topics Covered
+
+Attempted Mock Exam – 2
+
+Solved 2 questions
+
+<h1 align="center"> DAY 54 – QUANTITY MEASUREMENT APP (UC1 & UC2) 📏 </h1> <p align="center"><b>📅 Date:</b> 19/02/2026 (Thursday)</p>
+
+Topics Covered
+
+Started working on Quantity Measurement App
+
+Implemented UC1 and UC2
+
+Attended meeting with Capgemini mentor
+
+<h1 align="center"> DAY 55 – QUANTITY MEASUREMENT APP (UC3 & UC4) ⚙️ </h1> <p align="center"><b>📅 Date:</b> 20/02/2026 (Friday)</p>
+
+Topics Covered
+
+Continued working on Quantity Measurement App
+
+Implemented UC3 and UC4
+
+Attended Soft Skill classes
+
+<h1 align="center"> DAY 56 – QUANTITY MEASUREMENT APP (UC5 & UC6) 🔄 </h1> <p align="center"><b>📅 Date:</b> 21/02/2026 (Saturday)</p>
+
+Topics Covered
+
+Continued working on Quantity Measurement App
+
+Implemented UC5 and UC6
+
+Revised previous topics
+
+<h1 align="center"> DAY 57 – CONTINUATION 📈 </h1> <p align="center"><b>📅 Date:</b> 23/02/2026 (Tuesday)</p>
+
+Topics Covered
+
+Continued enhancement and improvements in ongoing projects
+
+Applied previously learned concepts in real-time scenarios
 ## 👤 AUTHOR
 
 | 🙋 Name | 🔗 GitHub |
