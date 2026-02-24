@@ -596,23 +596,9 @@ Started new project: 🏥 Healthcare
 
 Attended meeting with Capgemini mentor
 
-<h1 align="center"> DAY 43 – HEALTHCARE PROJECT IMPLEMENTATION 🏥 </h1> <p align="center"><b>📅 Date:</b> 06/02/2026 (Friday)</p>
+<h1 align="center"> DAY 43 – Leave </h1> <p align="center"><b>📅 Date:</b> 06/02/2026 (Friday)</p>
 
-Topics Covered
-
-Implemented additional UCs in Healthcare project
-
-Solved assignments based on DBMS & MSSQL
-
-Attended Soft Skill classes
-
-<h1 align="center"> DAY 44 – PROJECT COMPLETION ✅ </h1> <p align="center"><b>📅 Date:</b> 07/02/2026 (Saturday)</p>
-
-Topics Covered
-
-Completed all UCs in Address Book
-
-Completed all UCs in Healthcare project
+<h1 align="center"> DAY 44 – Leave</h1> <p align="center"><b>📅 Date:</b> 07/02/2026 (Saturday)</p>
 
 <h1 align="center"> DAY 45 – REVISION & MOCK PREPARATION 📚 </h1> <p align="center"><b>📅 Date:</b> 09/02/2026 (Monday)</p>
 
