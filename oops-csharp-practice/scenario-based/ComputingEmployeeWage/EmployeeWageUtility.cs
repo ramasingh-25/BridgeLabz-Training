@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Oops.Scenario_Based.ComputingEmployeeWage
+{
+    public class EmployeeWageUtility : IEmployeeWages
+    {
+        protected Random random = new Random();
+        public const int WagePerHour = 20;
+        public const int FullDayHours = 8;
+        public const int PartTimeHours = 4;
+        public void CheckAttendance()
+        {
+            int attendance = random.Next(0, 2);
+
+            if (attendance == 1)
+                Console.WriteLine("Employee is Present");
+            else
+                Console.WriteLine("Employee is Absent");
+
+        }
+        public void CalculateDailyWage()
+        {
+            int dailyWage = WagePerHour * FullDayHours;
+            Console.WriteLine("Daily Wage: " + dailyWage);
+        }
+        public void CalculatePartTimeWage()
+        {
+            int wage = PartTimeHours * WagePerHour;
+            Console.WriteLine("Part Time Wage: " + wage);
+        }
+        public void CalculateWageUsingSwitch()
+        {
+            int empType = random.Next(0, 3);
+            int hours = 0;
+
+            switch (empType)
+            {
+                case 1:
+                    hours = FullDayHours;
+                    break;
+                case 2:
+                    hours = PartTimeHours;
+                    break;
+                default:
+                    hours = 0;
+                    break;
+            }
+
+            Console.WriteLine("Wage: " + (hours * WagePerHour));
+        }
+        public void CalculateMonthlyWage()
+        {
+            int totalWage = 0;
+            int workingDays = 20;
+
+            for (int day = 1; day <= workingDays; day++)
+            {
+                totalWage += FullDayHours * WagePerHour;
+            }
+
+            Console.WriteLine("Monthly Wage: " + totalWage);
+        }
+        public void CalculateWageWithCondition()
+        {
+            int totalHours = 0;
+            int totalDays = 0;
+            int totalWage = 0;
+
+            while (totalDays < 20 && totalHours < 100)
+            {
+                totalDays++;
+                int empType = random.Next(0, 3);
+                int hours = 0;
+
+                switch (empType)
+                {
+                    case 1: hours = FullDayHours; break;
+                    case 2: hours = PartTimeHours; break;
+                }
+
+                totalHours += hours;
+                totalWage += hours * WagePerHour;
+            }
+
+            Console.WriteLine("Total Wage: " + totalWage);
+        }
+    }
+}
