@@ -1,0 +1,140 @@
+using FundooApp.ModelLayer.Entities;
+using FundooApp.RepositoryLayer.Context;
+using FundooApp.RepositoryLayer.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+namespace FundooApp.RepositoryLayer.Repositories
+{
+    public class NoteRepository : INoteRepository
+    {
+        private readonly FundooDbContext _context;
+
+        public NoteRepository(FundooDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<Note> AddAsync(Note note)
+        {
+            _context.Notes.Add(note);
+            await _context.SaveChangesAsync();
+            return note;
+        }
+
+        public async Task<IEnumerable<Note>> GetAllByUserAsync(int userId)
+        {
+            return await _context.Notes
+                .Include(n => n.Labels)
+                .Where(n => n.UserId == userId && !n.IsTrash)
+                .OrderByDescending(n => n.CreatedAt)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Note>> GetActiveNotesAsync(int userId)
+        {
+            // "Active" = not archived, not trashed - the default home view.
+            // Pinned notes surface first, then most recently created.
+            return await _context.Notes
+                .Include(n => n.Labels)
+                .Where(n => n.UserId == userId && !n.IsArchive && !n.IsTrash)
+                .OrderByDescending(n => n.IsPin)
+                .ThenByDescending(n => n.CreatedAt)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Note>> GetArchivedNotesAsync(int userId)
+        {
+            return await _context.Notes
+                .Include(n => n.Labels)
+                .Where(n => n.UserId == userId && n.IsArchive && !n.IsTrash)
+                .OrderByDescending(n => n.CreatedAt)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Note>> GetTrashedNotesAsync(int userId)
+        {
+            return await _context.Notes
+                .Include(n => n.Labels)
+                .Where(n => n.UserId == userId && n.IsTrash)
+                .OrderByDescending(n => n.ModifiedAt ?? n.CreatedAt)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Note>> SearchAsync(int userId, string searchTerm)
+        {
+            var term = searchTerm.Trim().ToLower();
+            return await _context.Notes
+                .Include(n => n.Labels)
+                .Where(n => n.UserId == userId && !n.IsTrash &&
+                    (n.Title.ToLower().Contains(term) || n.Description.ToLower().Contains(term)))
+                .OrderByDescending(n => n.CreatedAt)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Note>> GetByLabelAsync(int userId, int labelId)
+        {
+            return await _context.Notes
+                .Include(n => n.Labels)
+                .Where(n => n.UserId == userId && !n.IsTrash && n.Labels.Any(l => l.LabelId == labelId))
+                .OrderByDescending(n => n.CreatedAt)
+                .ToListAsync();
+        }
+
+        public async Task<Note?> GetByIdAsync(int noteId, int userId)
+        {
+            return await _context.Notes
+                .Include(n => n.Labels)
+                .FirstOrDefaultAsync(n => n.NoteId == noteId && n.UserId == userId);
+        }
+
+        public async Task<Note> UpdateAsync(Note note)
+        {
+            note.ModifiedAt = DateTime.UtcNow;
+            _context.Notes.Update(note);
+            await _context.SaveChangesAsync();
+            return note;
+        }
+
+        public async Task<bool> DeleteAsync(int noteId, int userId)
+        {
+            var note = await GetByIdAsync(noteId, userId);
+            if (note == null) return false;
+
+            _context.Notes.Remove(note);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> AddLabelToNoteAsync(int noteId, int labelId, int userId)
+        {
+            var note = await _context.Notes
+                .Include(n => n.Labels)
+                .FirstOrDefaultAsync(n => n.NoteId == noteId && n.UserId == userId);
+            var label = await _context.Labels
+                .FirstOrDefaultAsync(l => l.LabelId == labelId && l.UserId == userId);
+
+            if (note == null || label == null) return false;
+
+            if (!note.Labels.Any(l => l.LabelId == labelId))
+            {
+                note.Labels.Add(label);
+                await _context.SaveChangesAsync();
+            }
+            return true;
+        }
+
+        public async Task<bool> RemoveLabelFromNoteAsync(int noteId, int labelId, int userId)
+        {
+            var note = await _context.Notes
+                .Include(n => n.Labels)
+                .FirstOrDefaultAsync(n => n.NoteId == noteId && n.UserId == userId);
+
+            var label = note?.Labels.FirstOrDefault(l => l.LabelId == labelId);
+            if (note == null || label == null) return false;
+
+            note.Labels.Remove(label);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+    }
+}
