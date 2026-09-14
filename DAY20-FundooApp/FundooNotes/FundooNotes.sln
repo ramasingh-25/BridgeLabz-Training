@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooNotes.Shared", "FundooNotes.Shared\FundooNotes.Shared.csproj", "{16CD49BB-C205-47A9-A899-1FB47B0357BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooNotes.Gateway", "FundooNotes.Gateway\FundooNotes.Gateway.csproj", "{D654D3B4-7A93-40F9-990B-6E5921161001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooNotes.IdentityService", "FundooNotes.IdentityService\FundooNotes.IdentityService.csproj", "{6064A0F6-C78D-4B9F-AE8B-4DCA1674DF61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooNotes.NotesService", "FundooNotes.NotesService\FundooNotes.NotesService.csproj", "{ACE4B474-F61E-4569-A527-8DF66A0F6ED0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooNotes.LabelService", "FundooNotes.LabelService\FundooNotes.LabelService.csproj", "{0F027C01-9C5F-47C2-AEB6-CB12A3EFD967}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooNotes.Tests", "FundooNotes.Tests\FundooNotes.Tests.csproj", "{B3918BE3-35E0-4EE1-9E82-FD3619A448BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16CD49BB-C205-47A9-A899-1FB47B0357BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16CD49BB-C205-47A9-A899-1FB47B0357BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16CD49BB-C205-47A9-A899-1FB47B0357BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16CD49BB-C205-47A9-A899-1FB47B0357BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D654D3B4-7A93-40F9-990B-6E5921161001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D654D3B4-7A93-40F9-990B-6E5921161001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D654D3B4-7A93-40F9-990B-6E5921161001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D654D3B4-7A93-40F9-990B-6E5921161001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6064A0F6-C78D-4B9F-AE8B-4DCA1674DF61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6064A0F6-C78D-4B9F-AE8B-4DCA1674DF61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6064A0F6-C78D-4B9F-AE8B-4DCA1674DF61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6064A0F6-C78D-4B9F-AE8B-4DCA1674DF61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE4B474-F61E-4569-A527-8DF66A0F6ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE4B474-F61E-4569-A527-8DF66A0F6ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE4B474-F61E-4569-A527-8DF66A0F6ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE4B474-F61E-4569-A527-8DF66A0F6ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F027C01-9C5F-47C2-AEB6-CB12A3EFD967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F027C01-9C5F-47C2-AEB6-CB12A3EFD967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F027C01-9C5F-47C2-AEB6-CB12A3EFD967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F027C01-9C5F-47C2-AEB6-CB12A3EFD967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3918BE3-35E0-4EE1-9E82-FD3619A448BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3918BE3-35E0-4EE1-9E82-FD3619A448BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3918BE3-35E0-4EE1-9E82-FD3619A448BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3918BE3-35E0-4EE1-9E82-FD3619A448BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

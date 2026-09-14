@@ -1,0 +1,6 @@
+@FundooNotes.LabelService_HostAddress = http://localhost:5158
+
+GET {{FundooNotes.LabelService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
