@@ -1,0 +1,6 @@
+@FundooNotes.IdentityService_HostAddress = http://localhost:5097
+
+GET {{FundooNotes.IdentityService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
